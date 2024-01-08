@@ -1,3 +1,5 @@
+require 'pry'
+
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
@@ -49,12 +51,21 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1 or /products/1.json
   def destroy
-    @product.destroy!
+    @product.destroy
 
     respond_to do |format|
       format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
       format.json { head :no_content }
     end
+    # if @product.destroy!
+    #   respond_to do |format|
+    #     format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
+    #     format.json { head :no_content }
+    #   end
+    # else
+    #   format.html { redirect_to products_url, notice: "Product can not be deleted." }
+    #   format.json { render json: @product.errors, status: :unprocessable_entity }
+    # end 
   end
 
   private
