@@ -1,4 +1,4 @@
-import consumer from "channels/consumer"
+import consumer from "channels/consumer";
 
 consumer.subscriptions.create("ProductsChannel", {
   connected() {
@@ -11,5 +11,6 @@ consumer.subscriptions.create("ProductsChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-  }
+    $(".store #main").html(data.html);
+  },
 });
