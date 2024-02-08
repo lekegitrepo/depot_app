@@ -12,10 +12,11 @@ class Order < ApplicationRecord
 
 
   def add_line_items_from_cart(cart)
+    binding.pry
     cart.line_items.each do |item|
       item.cart_id = nil
-      item.order_id = id
-      # self.line_items << item
+      # item.order_id = id
+      line_items << item
     end
   end
 end
