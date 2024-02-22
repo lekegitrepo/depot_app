@@ -61,7 +61,10 @@ group :development do
   gem "web-console"
 
   # See https://github.com/pry/pry
-  gem 'pry', '~> 0.14.2'
+  # gem 'pry', '~> 0.14.2'
+
+  gem 'pry-byebug'
+  gem 'pry-rails'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
